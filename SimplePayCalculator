@@ -1,0 +1,39 @@
+
+family=input("What is your family name: ")
+name=input("What is your given name: ")
+pay=float(input("What is your hourly rate of pay: $"))
+hours=float(input("How many hours did you work that week: "))
+extra=float(hours-40)
+if hours<40:
+    gross_pay=(pay*hours)
+else:
+    gross_pay=(pay*40+extra*pay*2)
+printgross=gross_pay
+print ("Please enter a letter indicating the employee's tax category: ")
+print (" A. No tax deduction \n B. Tax is 10% of gross pay \n C. Tax is 20% of gross pay \n D. Tax is 29% of gross pay \n E. Tax is 35% of gross pay")
+letter=input("Please enter a letter now: ")
+if letter is "a":
+    gross_pay=gross_pay
+elif letter is "b":
+    gross_pay=(gross_pay*0.90)
+elif letter is "c":
+    gross_pay=(gross_pay*0.80)
+elif letter is "d":
+    gross_pay=(gross_pay*0.71)
+else:
+    gross_pay=(gross_pay*0.65)
+    
+charity=input("Indicate with a y or n whether you want $20 to be contributed to the United Way Charity? ")
+if charity=="y":
+    gross_pay=(gross_pay-20)
+print ("Your family name is: ", family)
+print ("Your given name is: ", name)
+print ("Your hourly rate of pay is: $ ", pay,"per hour")
+print ("Your number of hours worked that week is: ", hours)
+if hours>40:
+    print ("Your overtime hours is: " ,hours-40)
+else:
+    print ("Your overtime hours is 0")
+print ("Your gross pay is:$ " , printgross)
+print ("The total deduction is: $" , printgross-gross_pay)
+print ("Your net pay is: $" , gross_pay)
