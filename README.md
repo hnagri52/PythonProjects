@@ -1,2 +1,2 @@
-# PythonProjects
-Welcome to experimental projects I have created
+# PythonScripts
+Welcome to experimental Scripts I have created
