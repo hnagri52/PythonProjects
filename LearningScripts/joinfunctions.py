@@ -1,5 +1,4 @@
-
-
+"""File to practice join functions"""
 ls = ["Hussein", "sabi", "jy", "ahmed"]
 print(", ".join(ls))
 
@@ -14,4 +13,5 @@ print(var2)
 
 a = var.replace(" ", "")
 print(a)
-print( "letter: " + " letter: ".join(a) )
+print( "letter: " + " letter: ".join(a))
+
