@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c2303ae2-7315-4707-a7fe-f9ab0eb7bc4b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/LearningScripts/joinfunctions.py" beforeDir="false" afterPath="$PROJECT_DIR$/LearningScripts/joinfunctions.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/LearningScripts/mapfilterreduce.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -11,12 +12,12 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/LearningScripts/joinfunctions.py">
+        <entry file="file://$PROJECT_DIR$/LearningScripts/mapfilterreduce.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+            <state relative-caret-position="375">
+              <caret line="25" column="10" lean-forward="true" selection-start-line="25" selection-start-column="10" selection-end-line="25" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -46,6 +47,7 @@
         <option value="$PROJECT_DIR$/LearningScripts/namemainexp1.py" />
         <option value="$PROJECT_DIR$/LearningScripts/namemainexp2.py" />
         <option value="$PROJECT_DIR$/LearningScripts/joinfunctions.py" />
+        <option value="$PROJECT_DIR$/LearningScripts/mapfilterreduce.py" />
       </list>
     </option>
   </component>
@@ -100,7 +102,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.joinfunctions">
+  <component name="RunManager" selected="Python.mapfilterreduce">
     <configuration name="fstrings" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="PythonLearning" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -143,7 +145,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="lambdafunctions" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="mapfilterreduce" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="PythonLearning" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -151,11 +153,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/LearningScripts" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/LearningScripts/lambdafunctions.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/LearningScripts/mapfilterreduce.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -208,11 +210,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.mapfilterreduce" />
         <item itemvalue="Python.joinfunctions" />
         <item itemvalue="Python.namemainexp2" />
         <item itemvalue="Python.fstrings" />
         <item itemvalue="Python.rockpaperscis" />
-        <item itemvalue="Python.lambdafunctions" />
       </list>
     </recent_temporary>
   </component>
@@ -253,13 +255,7 @@
     </layout>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/lamda/Anoynymous.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="18" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/lamda/Anoynymous.py" />
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -365,9 +361,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/LearningScripts/namemainexplanation.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/LearningScripts/namemainexplanation.py" />
     <entry file="file://$PROJECT_DIR$/LearningScripts/namemainexp2.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -385,7 +379,14 @@
     <entry file="file://$PROJECT_DIR$/LearningScripts/joinfunctions.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
-          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LearningScripts/mapfilterreduce.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" column="10" lean-forward="true" selection-start-line="25" selection-start-column="10" selection-end-line="25" selection-end-column="10" />
         </state>
       </provider>
     </entry>
