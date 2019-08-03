@@ -5,7 +5,7 @@ import datetime as dt
 with open("water.txt", "a+") as file:
     file.write("log time is: " + str(dt.datetime.now() ) + "\n")
 
-songs = ["paani.mp3", "eyes.mp3", "physical.mp3"]
+songs = ["water.mp3", "eyes.mp3", "physical.mp3"]
 
 print(dt.datetime.now() )
 

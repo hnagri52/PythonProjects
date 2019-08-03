@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c2303ae2-7315-4707-a7fe-f9ab0eb7bc4b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/HealthyProgrammer/eyes.mp3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HealthyProgrammer/health.py" beforeDir="false" afterPath="$PROJECT_DIR$/HealthyProgrammer/health.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HealthyProgrammer/water.txt" beforeDir="false" afterPath="$PROJECT_DIR$/HealthyProgrammer/water.txt" afterDir="false" />
@@ -26,8 +27,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/HealthyProgrammer/health.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="23" column="34" lean-forward="true" selection-start-line="23" selection-start-column="34" selection-end-line="23" selection-end-column="34" />
+            <state relative-caret-position="225">
+              <caret line="15" column="36" selection-start-line="15" selection-start-column="36" selection-end-line="15" selection-end-column="36" />
               <folding>
                 <element signature="e#2#15#0" expanded="true" />
               </folding>
@@ -38,8 +39,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/HealthyProgrammer/water.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="51" lean-forward="true" selection-start-line="51" selection-end-line="51" />
+            <state relative-caret-position="360">
+              <caret line="51" selection-start-line="51" selection-end-line="51" />
             </state>
           </provider>
         </entry>
@@ -77,8 +78,8 @@
         <option value="$PROJECT_DIR$/LearningScripts/mapfilterreduce.py" />
         <option value="$PROJECT_DIR$/HighSchool/mpfourplayer.py" />
         <option value="$PROJECT_DIR$/LearningScripts/tryingsmth.py" />
-        <option value="$PROJECT_DIR$/HealthyProgrammer/health.py" />
         <option value="$PROJECT_DIR$/HealthyProgrammer/water.txt" />
+        <option value="$PROJECT_DIR$/HealthyProgrammer/health.py" />
       </list>
     </option>
   </component>
@@ -275,7 +276,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="822" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
       <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.24947146" />
@@ -442,13 +442,6 @@
     <entry file="file://$PROJECT_DIR$/HealthManagement/main.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/HealthyProgrammer/water.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="51" lean-forward="true" selection-start-line="51" selection-end-line="51" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/HighSchool/mpfourplayer.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
@@ -459,10 +452,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/HealthyProgrammer/water.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="51" selection-start-line="51" selection-end-line="51" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/HealthyProgrammer/health.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="34" lean-forward="true" selection-start-line="23" selection-start-column="34" selection-end-line="23" selection-end-column="34" />
+        <state relative-caret-position="225">
+          <caret line="15" column="36" selection-start-line="15" selection-start-column="36" selection-end-line="15" selection-end-column="36" />
           <folding>
             <element signature="e#2#15#0" expanded="true" />
           </folding>
