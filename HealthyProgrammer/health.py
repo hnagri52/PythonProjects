@@ -1,5 +1,4 @@
 import pygame
-import webbrowser
 import time
 import os
 import datetime as dt
@@ -10,14 +9,18 @@ songs = ["paani.mp3", "eyes.mp3", "physical.mp3"]
 
 print(dt.datetime.now() )
 
+
+
 pygame.mixer.init()
-pygame.mixer.music.load("/Users/husseinnagri/Desktop/Frontend_Learning/PythonLearning/HealthyProgrammer/water.mp3")
-pygame.mixer.music.play(0)
-pygame.mixer.music.set_volume(0.6)
-print(pygame.mixer.music.get_volume())
+pygame.init()
+pygame.mixer.music.load('water.mp3')
+i = 0
+while i<1:
+    pygame.mixer.music.load('water.mp3')
+    pygame.mixer.music.play(loops=10, start=0.0)
+    time.sleep(35)
+    pygame.mixer.music.set_volume(10)
 
-
-text = input("hello")
-os.system("afplay water.mp3")
-if text == "hello":
-    os.system("killall iTunes")
+    text = input("Enter the time")
+    if text == "hello":
+        i = i + 1
