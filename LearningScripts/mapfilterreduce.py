@@ -51,6 +51,7 @@ def is_greater_than_5(a):
 
 greater_than_5 = list(filter(is_greater_than_5, ls5))
 
+
 print(greater_than_5)
 
 
