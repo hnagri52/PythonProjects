@@ -21,6 +21,8 @@ class Employee:
         # or one line: return cls(*string.split("-")
 
 
+#class methods cannot modify object instance states, but can change class states, which ultimately applies to all instances
+
 
 hussein = Employee("Hussein", 123, "Dev")
 sabi = Employee("SABI", 22, "nurse")
