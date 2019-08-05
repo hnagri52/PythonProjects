@@ -25,7 +25,7 @@ except Exception as e:
     print(e)
 
 
-#classmethods are used to access class variables... they are like decorators in a way
+#classmethods are used to access class variables... they are like decorators in a way, it changes the class variable.. so its objects will change as well
 #the cls refers to the class the object is an instance of, they are used as alternative constructors mainly
 
 hussein.change_peep(76543)
