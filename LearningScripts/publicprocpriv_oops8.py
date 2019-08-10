@@ -27,3 +27,10 @@ class Employee:
 hussein = Employee("Hussein", 123, "Dev")
 #to call a private, do the following
 print(hussein._Employee__private)
+
+
+#/////////////////////////////polymorphism
+
+print(5+6)
+print("5" + "6")
+#polymorphism is basically when u override functional commands to act in other ways
