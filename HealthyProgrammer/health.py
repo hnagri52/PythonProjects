@@ -3,8 +3,40 @@ import time
 import os
 import random
 import datetime as dt
-def main():
+from datetime import time
 
+def playmusic(song, keyword):
+    pygame.mixer.init()
+    pygame.mixer.music.load(song)
+    pygame.mixer.music.play()
+    while True:
+        inp = input(f"Please enter {keyword} to continue: ")
+        if inp == keyword:
+            pygame.mixer.music.stop()
+            break;
+
+
+def logger(file, message):
+    with open(file,  "a+") as file:
+        file.write(f"log time is: " + str(dt.datetime.now()) + f" {message} \n")
+
+
+def main():
+    init_water = time()
+    init_eyes = time()
+    init_ex = time()
+
+    watertime = 5
+    eyestime = 10
+    extime = 20
+
+    while True:
+        if (time() - init_water) > watertime:
+            playmusic("water.mp3", "drank")
+            init_water = time()
+
+
+"""
     songs = ["water.mp3", "eyes.mp3", "physical.mp3"]
     pygame.mixer.init()
     pygame.init()
@@ -44,7 +76,7 @@ def main():
         if text == "hello":
             pygame.mixer.music.stop()
         i = 0
-
+"""
 
 if __name__ == '__main__':
     main()
