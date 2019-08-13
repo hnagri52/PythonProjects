@@ -75,6 +75,8 @@ def main():
         text = input("Enter the time")
         if text == "hello":
             pygame.mixer.music.stop()
+            
+            
         i = 0
 """
 
