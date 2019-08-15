@@ -22,7 +22,7 @@ class Employee:
         self.lname = names.split(".")[1]
 
 #we also need to create a custom decorator to delete the property
-    
+
     @email.deleter
     def email(self):
         self.fname = None
