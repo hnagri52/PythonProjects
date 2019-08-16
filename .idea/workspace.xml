@@ -2,14 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c2303ae2-7315-4707-a7fe-f9ab0eb7bc4b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/LearningScripts/CoRoutines.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LearningScripts/jsonfilesworktry.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LearningScripts/osmoduletry.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NewsReader/main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/prettifyFolder/main.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/LearningScripts/picklemodulestuff.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/LearningScripts/re.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/LearningScripts/regexlearning.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HealthyProgrammer/health.py" beforeDir="false" afterPath="$PROJECT_DIR$/HealthyProgrammer/health.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LearningScripts/huss.txt" beforeDir="false" afterPath="$PROJECT_DIR$/LearningScripts/huss.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -19,25 +15,9 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/LearningScripts/jsonfilesworktry.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="13" column="27" selection-start-line="13" selection-start-column="27" selection-end-line="13" selection-end-column="27" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/NewsReader/main.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="22" column="21" selection-start-line="22" selection-start-column="21" selection-end-line="22" selection-end-column="21" />
-              <folding>
-                <element signature="e#0#21#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
+        <entry file="file://$PROJECT_DIR$/LearningScripts/raiseErrors.py">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -102,6 +82,9 @@
         <option value="$PROJECT_DIR$/LearningScripts/osmoduletry.py" />
         <option value="$PROJECT_DIR$/LearningScripts/jsonfilesworktry.py" />
         <option value="$PROJECT_DIR$/NewsReader/main.py" />
+        <option value="$PROJECT_DIR$/LearningScripts/picklemodulestuff.py" />
+        <option value="$PROJECT_DIR$/LearningScripts/re.txt" />
+        <option value="$PROJECT_DIR$/LearningScripts/regexlearning.py" />
       </list>
     </option>
   </component>
@@ -121,6 +104,11 @@
             <path>
               <item name="PythonLearning" type="b2602c69:ProjectViewProjectNode" />
               <item name="PythonLearning" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PythonLearning" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PythonLearning" type="462c0819:PsiDirectoryNode" />
+              <item name="LearningScripts" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -152,7 +140,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.main">
+  <component name="RunManager" selected="Python.regexlearning">
     <configuration name="for-with-else-statement" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="PythonLearning" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -187,27 +175,6 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/LearningScripts/functioncaching.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="list-dict-set-generator-comprehension" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="PythonLearning" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/LearningScripts" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/LearningScripts/list-dict-set-generator-comprehension.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -258,13 +225,34 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="regexlearning" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="PythonLearning" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/LearningScripts" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/LearningScripts/regexlearning.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.regexlearning" />
         <item itemvalue="Python.main" />
         <item itemvalue="Python.osmoduletry" />
         <item itemvalue="Python.functioncaching" />
         <item itemvalue="Python.for-with-else-statement" />
-        <item itemvalue="Python.list-dict-set-generator-comprehension" />
       </list>
     </recent_temporary>
   </component>
@@ -286,7 +274,7 @@
     <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.24947146" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.24947146" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="0" weight="0.32876712" />
       <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" />
@@ -294,7 +282,7 @@
       <window_info anchor="bottom" id="Message" order="3" />
       <window_info anchor="bottom" id="Find" order="4" weight="0.32876712" />
       <window_info anchor="bottom" id="Version Control" order="5" />
-      <window_info active="true" anchor="bottom" id="Run" order="6" visible="true" weight="0.32876712" />
+      <window_info anchor="bottom" id="Run" order="6" visible="true" weight="0.32876712" />
       <window_info anchor="bottom" id="Debug" order="7" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
@@ -305,23 +293,6 @@
     </layout>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/HighSchool/GradeCalc.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HighSchool/ispalindrome.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HighSchool/PalindromeTester.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-187" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HighSchool/SimplePayCalculator">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HighSchool/SinCardVerification.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/HighSchool/StarPatternCreator.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -614,13 +585,33 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/NewsReader/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="21" selection-start-line="22" selection-start-column="21" selection-end-line="22" selection-end-column="21" />
-          <folding>
-            <element signature="e#0#21#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="30">
+          <caret line="2" column="27" selection-start-line="2" selection-start-column="27" selection-end-line="2" selection-end-column="27" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LearningScripts/picklemodulestuff.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" selection-start-line="23" selection-end-line="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LearningScripts/regularex">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LearningScripts/regexlearning.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="26" column="26" lean-forward="true" selection-start-line="26" selection-start-column="26" selection-end-line="26" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LearningScripts/re.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LearningScripts/raiseErrors.py">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
 </project>
