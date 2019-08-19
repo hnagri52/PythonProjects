@@ -21,9 +21,11 @@ def main():
     response = requests.get(url)
     print(response.json() )
     data = json.loads(response.text)
-    for i in range(20):
-        random_string = data["articles"][i]["title"]
+    articles = data["articles"]
+    for article in articles:
+        random_string = article["title"]
         readArticls(random_string)
+        readArticls("Onto the next article!")
 
 
     # for item in data["articles"][1]["title"]:
