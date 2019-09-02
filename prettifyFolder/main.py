@@ -1,4 +1,4 @@
-"""Will take a path, file, and the format to replace, and clean up the folder"""
+"""Will take a path, file, and the format to replace, and clean up the folder... Will rename files"""
 import os
 def soldier(path, file, format):
     os.chdir(path)
