@@ -5,10 +5,10 @@ def soldier(path, file, format):
     i = 1
     files = os.listdir(path)
     with open(file) as f:
-        filelist = f.read().split("\n")
+        fileList = f.read().split("\n")
 
     for file in files:
-        if file not in filelist:
+        if file not in fileList:
             os.rename(file, file.capitalize())
 
         if os.path.splitext(file)[1] == format:
