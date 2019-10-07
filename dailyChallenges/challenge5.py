@@ -30,4 +30,7 @@ def cons (pair):
     return pair[3]
 
 
+def main():
+    car(cons(4,5))
 if __name__ == '__main__':
+    main()
