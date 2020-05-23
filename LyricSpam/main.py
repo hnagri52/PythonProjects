@@ -23,9 +23,10 @@ def main():
         #
         # print(apiurl.content)
 
-        apiUrl = requests.get(f"https://api.happi.dev/v1/music?q={text}&limit=1&apikey={HAPPI_SECRET_KEY}&type=track")
+        apiUrl = requests.get(f"https://api.happi.dev/v1/music?q={text}&limit=1&apikey={HAPPI_SECRET_KEY}&type=track").content
+        apiUrl = apiUrl.decode('utf-8')
 
-        print(apiUrl.content)
+        print(apiUrl)
 
 
 
