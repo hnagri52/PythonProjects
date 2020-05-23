@@ -2,15 +2,20 @@ import requests
 import json
 from dotenv import load_dotenv
 import os
+import time
+from twilio.rest import Client
+
+
 load_dotenv()
-
-
 
 def main():
     YOUTUBE_SECRET_KEY = os.getenv("YOUTUBE_API")
     HAPPI_SECRET_KEY = os.getenv("HAPPI_API")
+    TWI_SID = os.getenv("TWI_SID")
+    TWI_TOK = os.getenv("TWI_TOK")
+    client = Client(TWI_SID, TWI_TOK)
 
-    text = input("Enter the song name you want to play!")
+    text = input("Enter a song name, and their artist name: ")
 
     while(text != 'q'):
         # delete youtube api get youtube id cuz other api not working as well
@@ -23,11 +28,38 @@ def main():
         #
         # print(apiurl.content)
 
-        apiUrl = requests.get(f"https://api.happi.dev/v1/music?q={text}&limit=1&apikey={HAPPI_SECRET_KEY}&type=track").content
-        apiUrl = apiUrl.decode('utf-8')
+        apiUrl = requests.get(f"https://api.happi.dev/v1/music?q={text}&limit=1&apikey={HAPPI_SECRET_KEY}&type=track")\
+            .content.decode('utf-8')
+        apiUrl = json.loads(apiUrl)
 
-        print(apiUrl)
+        if (len(apiUrl["result"]) == 0 or apiUrl["result"][0]["haslyrics"] == False ):
+            print(apiUrl, "\n")
+            text = input("No lyrics found with those search results! Enter the song name you want to play!")
 
+            continue
+
+        lyricLink = apiUrl["result"][0]["api_lyrics"]
+        lyrics = requests.get(lyricLink + f"?apikey={HAPPI_SECRET_KEY}")
+
+        lyrics_details = lyrics.content.decode('utf-8')
+        lyrics = json.loads(lyrics_details)
+
+        if (len(lyrics["result"]) == 0):
+            print("No lyrics found with those search results! \n")
+            continue
+
+        lyrics = lyrics["result"]["lyrics"]
+        listOfWords = lyrics.split("\n")
+        listOfWords = [x for x in listOfWords if x != '']
+
+        for word in listOfWords:
+            message = client.messages \
+                .create(
+                body=f'{word}',
+                from_='+18706863507',
+                to='+16478915152'
+            )
+            time.sleep(3)
 
 
 
