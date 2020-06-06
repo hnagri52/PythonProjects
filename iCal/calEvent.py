@@ -1,5 +1,5 @@
 import datetime
-
+from zoomScheduler import ZoomScheduler
 
 class CalEvent:
     def __init__(self, desc=""):
@@ -18,4 +18,10 @@ class CalEvent:
             self.start_date = date
         else:
             self.end_date = date
+
+
+    def schedule_meeting(self, details):
+        newMeeting = ZoomScheduler()
+        newMeeting.send_invite(details)
+
 
