@@ -1,7 +1,6 @@
 import datetime
 from zoomScheduler import ZoomScheduler
 
-
 class CalEvent:
     def __init__(self, desc=""):
         self.desc = desc
