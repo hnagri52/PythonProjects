@@ -1,9 +1,11 @@
 import datetime
 from zoomScheduler import ZoomScheduler
 
+
 class CalEvent:
     def __init__(self, desc=""):
         self.desc = desc
+
 
     def validate_and_add(self, date_text, date_type):
         try:

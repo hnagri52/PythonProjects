@@ -14,7 +14,11 @@ def main():
     # validate and add the end date
     end_date = input("Please enter the end date (YYYY-MM-DD): ")
     theNewEvenet.validate_and_add(end_date, "end")
+    the_deets = {"start_date": theNewEvenet.start_date,
+                "desc": theNewEvenet.desc,
+                "end_date": theNewEvenet.end_date}
+    theNewEvenet.schedule_meeting(the_deets)
 
-    print(theNewEvenet.start_date, theNewEvenet.desc, theNewEvenet.end_date)
+
 if __name__ == '__main__':
     main()
