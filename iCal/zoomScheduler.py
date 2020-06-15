@@ -13,11 +13,15 @@ class ZoomScheduler:
         self.JWT = os.getenv("ZOOM_JWT")
     def send_invite(self, creation_details):
         URL = f"https://api.zoom.us/v2/users/{self.email}/meetings?access_token={self.JWT}"
-        print(URL)
         data = json.dumps({})
         headers = {
             "Content-Type":"application/json"
         }
         res = requests.post(URL, data=data, headers=headers)
         print(res.content)
+
+
+    def get_details(self):
+        to_send = input("Enter the email of the zoom participants, separated by a comma").split(",")
+
 
