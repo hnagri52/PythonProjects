@@ -16,28 +16,33 @@ class ZoomScheduler:
         URL = f"https://api.zoom.us/v2/users/{self.email}/meetings?access_token={self.JWT}"
 
         emails = self.get_details()
+        data = {"myEmail" : self.email,
+                "send_emails" : emails,
+                "start" : creation_details["start_date"],
+                "end" : creation_details["end_date"],
+                "desc" : creation_details["desc"]
+                }
 
-
-
-
-
-        data = json.dumps({})
+        data = json.dumps(data, indent=4, sort_keys=True, default=str)
         headers = {
             "Content-Type":"application/json"
         }
         res = requests.post(URL, data=data, headers=headers)
 
+        print(res.content)
+
 
     def get_details(self):
-        to_send = input("Enter the email of the zoom participants, separated by a comma").split(",")
+        to_send = input("Enter the email of the zoom participants, separated by a comma: ").split(",")
+        emails = []
         for email in to_send:
-            self.check(email)
+            emails = self.check(email)
         return to_send
 
     def check(self, email):
         #regex for email
         regex = '^[a-z0-9]+[\._]?[a-z0-9]+[@]\w+[.]\w{2,3}$'
-        if (re.search(regex, email)):
-            pass
+        if (re.search(regex, email.strip())):
+            return email.strip()
         else:
             raise ValueError(f'Invalid email provided: {email}')
