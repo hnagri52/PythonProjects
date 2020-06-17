@@ -47,6 +47,7 @@
       <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/six-1.15.0.dist-info/WHEEL" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/six-1.15.0.dist-info/top_level.txt" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/six.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/zoomScheduler.py" beforeDir="false" afterPath="$PROJECT_DIR$/zoomScheduler.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
