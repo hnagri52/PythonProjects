@@ -3,6 +3,10 @@ import os
 import json
 import requests
 import re
+from icalendar import Calendar, Event
+import pytz
+import datetime
+
 load_dotenv()
 
 
@@ -29,6 +33,12 @@ class ZoomScheduler:
         }
         res = requests.post(URL, data=data, headers=headers)
 
+
+        print(creation_details["start_date"])
+
+        cal = Calendar()
+        self.make_ical(data)
+
         print(res.content)
 
 
@@ -46,3 +56,9 @@ class ZoomScheduler:
             return email.strip()
         else:
             raise ValueError(f'Invalid email provided: {email}')
+
+    def make_ical(self,data):
+        event = Event()
+        event.add('summary', data["desc"])
+        event.add("dtstart", datetime(data["start_date"].year, data["start_date"].month, data["start_date"].day, 8,0,0, tzinfo=pytz.utc))
+        event.add('dtend', datetime(data["end_date"].year, data["end_date"].month, data["end_date"].day, 8,0,0, tzinfo=pytz.utc))
