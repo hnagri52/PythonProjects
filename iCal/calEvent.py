@@ -1,4 +1,4 @@
-import datetime
+from datetime import datetime
 from zoomScheduler import ZoomScheduler
 
 class CalEvent:
@@ -8,11 +8,11 @@ class CalEvent:
 
     def validate_and_add(self, date_text, date_type):
         try:
-             datetime_obj = datetime.date.fromisoformat(date_text)
-             if(isinstance(datetime_obj, datetime.date)):
+             datetime_obj = datetime.fromisoformat(date_text)
+             if(isinstance(datetime_obj, datetime)):
                 self.add_date(datetime_obj, date_type)
         except:
-            raise ValueError("Incorrect data format, should be YYYY-MM-DD")
+            raise ValueError("Incorrect data format, should be YYYY-MM-DD HH:MM")
 
     def add_date(self, date, type):
         if(type=="start"):

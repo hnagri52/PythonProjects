@@ -34,12 +34,12 @@ class ZoomScheduler:
         res = requests.post(URL, data=data, headers=headers)
 
 
-        print(creation_details["start_date"])
+        # print(creation_details["start_date"])
 
         cal = Calendar()
         self.make_ical(data)
 
-        print(res.content)
+        # print(res.content)
 
 
     def get_details(self):
@@ -59,6 +59,7 @@ class ZoomScheduler:
 
     def make_ical(self,data):
         event = Event()
-        event.add('summary', data["desc"])
-        event.add("dtstart", datetime(data["start_date"].year, data["start_date"].month, data["start_date"].day, 8,0,0, tzinfo=pytz.utc))
-        event.add('dtend', datetime(data["end_date"].year, data["end_date"].month, data["end_date"].day, 8,0,0, tzinfo=pytz.utc))
+        data = json.loads(data)
+        event.add("summary", data["desc"])
+        event.add("dtstart", data["start_date"])
+        event.add('dtend', data["end_date"])
