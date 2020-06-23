@@ -33,9 +33,6 @@ class ZoomScheduler:
         }
         res = requests.post(URL, data=data, headers=headers)
 
-
-        # print(creation_details["start_date"])
-
         cal = Calendar()
         self.make_ical(data)
 
@@ -60,6 +57,13 @@ class ZoomScheduler:
     def make_ical(self,data):
         event = Event()
         data = json.loads(data)
+        print(data)
         event.add("summary", data["desc"])
-        event.add("dtstart", data["start_date"])
-        event.add('dtend', data["end_date"])
+        event.add("dtstart", data["start"])
+        event.add('dtend', data["end"])
+        for email in data["send_emails"]:
+            event.add("attendee", f"MAILTO:${email}")
+
+
+        #https://icalendar.readthedocs.io/en/latest/usage.html
+
