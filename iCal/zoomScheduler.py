@@ -57,14 +57,17 @@ class ZoomScheduler:
     def make_ical(self,data, zoom_details):
         event = Event()
         data = json.loads(data)
-        # print(data)
+        zoom_data = json.loads(zoom_details)
         #TODO: so have 1 event which sends meeting icals to attendees, and 1 for host
-        event.add("summary", data["desc"])
+
+
+
+        #For host
+        total_desc = data["desc"] + "\n" + "Link to start meeting: " + zoom_data["start_url"]
+        event.add("summary", total_desc)
         # event.add("dtstart", data["start"])
         # event.add('dtend', data["end"])
         for email in data["send_emails"]:
             event.add("attendee", f"MAILTO:${email}")
-
-        print(json.loads(zoom_details))
         #https://icalendar.readthedocs.io/en/latest/usage.html
 
