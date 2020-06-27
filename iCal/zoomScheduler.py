@@ -1,9 +1,9 @@
 from dotenv import load_dotenv
-import os
 import json
 import requests
 import re
 from icalendar import Calendar, Event
+import tempfile, os
 import pytz
 from datetime import datetime
 
@@ -34,7 +34,12 @@ class ZoomScheduler:
         res = requests.post(URL, data=data, headers=headers)
 
         cal = Calendar()
-        self.make_ical(data, res.content)
+        cal.add_component(self.make_ical(data, res.content) )
+        directory = tempfile.mkdtemp()
+        print(directory)
+        f = open(os.path.join(directory, 'invite.ics'), 'wb')
+        f.write(cal.to_ical())
+        f.close()
 
         # print(res.content)
 
@@ -60,17 +65,18 @@ class ZoomScheduler:
         zoom_data = json.loads(zoom_details)
         #TODO: so have 1 event which sends meeting icals to attendees, and 1 for host
 
-        print(type(data["start"]))
-
         #For host
         total_desc = data["desc"] + "\n" + "Link to start meeting: " + zoom_data["start_url"]
         event.add("summary", total_desc)
         event.add("dtstart", datetime.strptime(data["start"], '%Y-%m-%d %H:%M:%S'))
         event.add('dtend', datetime.strptime(data["end"], '%Y-%m-%d %H:%M:%S'))
+        # event.add("")
         for email in data["send_emails"]:
             event.add("attendee", f"MAILTO:${email}")
         #https://icalendar.readthedocs.io/en/latest/usage.html
 
+
+        return event
         print(data)
         print(zoom_data)
 
