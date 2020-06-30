@@ -5,7 +5,12 @@ import re
 from icalendar import Calendar, Event
 import tempfile, os
 import pytz
+import smtplib
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
+from email.mime.application import MIMEApplication
 from datetime import datetime
+from os.path import basename
 
 load_dotenv()
 
@@ -36,7 +41,7 @@ class ZoomScheduler:
         cal = Calendar()
         cal.add_component(self.make_ical(data, res.content) )
         dir = self.write_temp_dir()
-        #TODO:// create a functoin to send the email, the file is located in dir @ dir/invite.ics
+        #TODO:// create a functoin to send the email, the file is located in dir @ dir/invite.ics -->LINK: https://stackoverflow.com/questions/3362600/how-to-send-email-attachments
 
         # print(res.content)
 
