@@ -41,6 +41,8 @@ class ZoomScheduler:
         cal = Calendar()
         cal.add_component(self.make_ical(data, res.content) )
         dir = self.write_temp_dir()
+
+
         #TODO:// create a functoin to send the email, the file is located in dir @ dir/invite.ics -->LINK: https://stackoverflow.com/questions/3362600/how-to-send-email-attachments
 
         # print(res.content)
@@ -88,6 +90,10 @@ class ZoomScheduler:
         f.write(cal.to_ical())
         f.close()
         return directory
+
+
+    def send_mail(self, directory, ):
+        pass
 
 
 
