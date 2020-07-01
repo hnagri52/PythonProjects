@@ -22,6 +22,10 @@ class ZoomScheduler:
         self.zoom_key = os.getenv("ZOOM_API_KEY")
         self.email = os.getenv("ZOOM_EMAIL")
         self.JWT = os.getenv("ZOOM_JWT")
+        self.smtp_email = os.getenv("SMTP_EMAIL")
+        self.smtp_pass = os.getenv("SMTP_PWD")
+
+
     def send_invite(self, creation_details):
         URL = f"https://api.zoom.us/v2/users/{self.email}/meetings?access_token={self.JWT}"
 
@@ -40,9 +44,10 @@ class ZoomScheduler:
         res = requests.post(URL, data=data, headers=headers)
 
         cal = Calendar()
-        cal.add_component(self.make_ical(data, res.content) )
+        cal.add_component(self.make_ical(data, res.content))
         dir = self.write_temp_dir()
         #make the send email fct call
+        self.send_mail(dir, self.smtp_email, data["send_emails"], )
 
         #TODO:// create a functoin to send the email, the file is located in dir @ dir/invite.ics -->LINK: https://stackoverflow.com/questions/3362600/how-to-send-email-attachments
 
@@ -97,27 +102,90 @@ class ZoomScheduler:
               server="127.0.0.1" ):
         assert isinstance(send_to, list)
         #TODO: TWEAK
+        # msg = MIMEMultipart()
+        # msg['From'] = send_from
+        # msg['To'] = COMMASPACE.join(send_to)
+        # msg['Date'] = formatdate(localtime=True)
+        # msg['Subject'] = subject
+        #
+        # msg.attach(MIMEText(text))
+        #
+        # for f in files or []:
+        #     with open(f, "rb") as fil:
+        #         part = MIMEApplication(
+        #             fil.read(),
+        #             Name=basename(f)
+        #         )
+        #     # After the file is closed
+        #     part['Content-Disposition'] = 'attachment; filename="%s"' % basename(f)
+        #     msg.attach(part)
+        #
+        # smtp = smtplib.SMTP(server)
+        # smtp.sendmail(send_from, send_to, msg.as_string())
+        # smtp.close()
+
+        import smtplib
+        from email.mime.multipart import MIMEMultipart
+        from email.mime.text import MIMEText
+        from email.mime.base import MIMEBase
+        from email import encoders
+
+        fromaddr = "EMAIL address of the sender"
+        toaddr = "EMAIL address of the receiver"
+
+        # instance of MIMEMultipart
         msg = MIMEMultipart()
+
+        # storing the senders email address
         msg['From'] = send_from
+
+        # storing the receivers email address
         msg['To'] = COMMASPACE.join(send_to)
-        msg['Date'] = formatdate(localtime=True)
+
+        # storing the subject
         msg['Subject'] = subject
 
-        msg.attach(MIMEText(text))
+        # string to store the body of the mail
+        body = text
 
-        for f in files or []:
-            with open(f, "rb") as fil:
-                part = MIMEApplication(
-                    fil.read(),
-                    Name=basename(f)
-                )
-            # After the file is closed
-            part['Content-Disposition'] = 'attachment; filename="%s"' % basename(f)
-            msg.attach(part)
+        # attach the body with the msg instance
+        msg.attach(MIMEText(body, 'plain'))
 
-        smtp = smtplib.SMTP(server)
-        smtp.sendmail(send_from, send_to, msg.as_string())
-        smtp.close()
+        # open the file to be sent
+        filename = "invite.ics"
+        attachment = open(os.path.join(directory, filename), "rb")
+
+        # instance of MIMEBase and named as p
+        p = MIMEBase('application', 'octet-stream')
+
+        # To change the payload into encoded form
+        p.set_payload((attachment).read())
+
+        # encode into base64
+        encoders.encode_base64(p)
+
+        p.add_header('Content-Disposition', "attachment; filename= %s" % filename)
+
+        # attach the instance 'p' to instance 'msg'
+        msg.attach(p)
+
+        # creates SMTP session
+        s = smtplib.SMTP('smtp.gmail.com', 587)
+
+        # start TLS for security
+        s.starttls()
+
+        # Authentication
+        s.login(send_from, self.smtp_pass)
+
+        # Converts the Multipart msg into a string
+        text = msg.as_string()
+
+        # sending the mail
+        s.sendmail(send_from, toaddr, text)
+
+        # terminating the session
+        s.quit()
 
 
 
