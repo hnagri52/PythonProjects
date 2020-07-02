@@ -47,6 +47,7 @@ class ZoomScheduler:
         cal.add_component(self.make_ical(data, res.content))
         dir = self.write_temp_dir(cal)
         #make the send email fct call
+        data = json.loads(data)
         self.send_mail(dir, self.smtp_email, data["send_emails"], "MEETING INVITE!", data["desc"])
 
         #TODO:// create a functoin to send the email, the file is located in dir @ dir/invite.ics -->LINK: https://stackoverflow.com/questions/3362600/how-to-send-email-attachments
