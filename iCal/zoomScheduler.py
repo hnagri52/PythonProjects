@@ -130,7 +130,6 @@ class ZoomScheduler:
         from email.mime.base import MIMEBase
         from email import encoders
 
-        fromaddr = "EMAIL address of the sender"
         toaddr = "EMAIL address of the receiver"
 
         # instance of MIMEMultipart
@@ -182,7 +181,7 @@ class ZoomScheduler:
         text = msg.as_string()
 
         # sending the mail
-        s.sendmail(send_from, toaddr, text)
+        s.sendmail(send_from, COMMASPACE.join(send_to), text)
 
         # terminating the session
         s.quit()
