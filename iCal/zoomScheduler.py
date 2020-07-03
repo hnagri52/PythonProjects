@@ -4,11 +4,11 @@ import requests
 import re
 from icalendar import Calendar, Event
 import tempfile, os
-import pytz
 import smtplib
-from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
-from email.mime.application import MIMEApplication
+from email.mime.text import MIMEText
+from email.mime.base import MIMEBase
+from email import encoders
 from email.utils import COMMASPACE, formatdate
 from datetime import datetime
 from os.path import basename
@@ -101,36 +101,6 @@ class ZoomScheduler:
 
     def send_mail(self, directory,send_from, send_to, subject, text):
         assert isinstance(send_to, list)
-        #TODO: TWEAK
-        # msg = MIMEMultipart()
-        # msg['From'] = send_from
-        # msg['To'] = COMMASPACE.join(send_to)
-        # msg['Date'] = formatdate(localtime=True)
-        # msg['Subject'] = subject
-        #
-        # msg.attach(MIMEText(text))
-        #
-        # for f in files or []:
-        #     with open(f, "rb") as fil:
-        #         part = MIMEApplication(
-        #             fil.read(),
-        #             Name=basename(f)
-        #         )
-        #     # After the file is closed
-        #     part['Content-Disposition'] = 'attachment; filename="%s"' % basename(f)
-        #     msg.attach(part)
-        #
-        # smtp = smtplib.SMTP(server)
-        # smtp.sendmail(send_from, send_to, msg.as_string())
-        # smtp.close()
-
-        import smtplib
-        from email.mime.multipart import MIMEMultipart
-        from email.mime.text import MIMEText
-        from email.mime.base import MIMEBase
-        from email import encoders
-
-        toaddr = "EMAIL address of the receiver"
 
         # instance of MIMEMultipart
         msg = MIMEMultipart()
