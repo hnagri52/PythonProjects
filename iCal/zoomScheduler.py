@@ -81,7 +81,8 @@ class ZoomScheduler:
         event.add("summary", total_desc)
         event.add("dtstart", datetime.strptime(data["start"], '%Y-%m-%d %H:%M:%S'))
         event.add('dtend', datetime.strptime(data["end"], '%Y-%m-%d %H:%M:%S'))
-        # event.add("")
+        event.add("description", "the url appears in the desc")
+        #TODO:// add here the url link
         for email in data["send_emails"]:
             event.add("attendee", f"MAILTO:${email}")
         #https://icalendar.readthedocs.io/en/latest/usage.html
@@ -114,6 +115,7 @@ class ZoomScheduler:
         # storing the subject
         msg['Subject'] = subject
 
+        print(text)
         # string to store the body of the mail
         body = text
 
