@@ -77,11 +77,11 @@ class ZoomScheduler:
         #TODO: so have 1 event which sends meeting icals to attendees, and 1 for host
 
         #For host
-        total_desc = data["desc"] + "\n" + "Link to start meeting: " + zoom_data["start_url"]
-        event.add("summary", total_desc)
+        # total_desc = data["desc"] + "\n" + "Link to start meeting: " + zoom_data["start_url"]
+        event.add("summary", data["desc"] )
         event.add("dtstart", datetime.strptime(data["start"], '%Y-%m-%d %H:%M:%S'))
         event.add('dtend', datetime.strptime(data["end"], '%Y-%m-%d %H:%M:%S'))
-        event.add("description", "the url appears in the desc")
+        event.add("description", zoom_data["start_url"])
         #TODO:// add here the url link
         for email in data["send_emails"]:
             event.add("attendee", f"MAILTO:${email}")
