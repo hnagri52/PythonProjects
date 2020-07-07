@@ -9,9 +9,8 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from email.mime.base import MIMEBase
 from email import encoders
-from email.utils import COMMASPACE, formatdate
+from email.utils import COMMASPACE
 from datetime import datetime
-from os.path import basename
 
 load_dotenv()
 
@@ -43,14 +42,16 @@ class ZoomScheduler:
         }
         res = requests.post(URL, data=data, headers=headers)
 
+        #to host
         cal = Calendar()
         cal.add_component(self.make_ical(data, res.content, "from"))
         dir = self.write_temp_dir(cal)
-        #make the send email fct call
         data = json.loads(data)
-        unloaded_data = json.dumps(data)
         self.send_mail(dir, self.smtp_email, data["send_emails"], "MEETING INVITE!", data["desc"], "from")
 
+
+        #to recipients
+        unloaded_data = json.dumps(data)
         cal_2 = Calendar()
         cal_2.add_component(self.make_ical(unloaded_data, res.content, "to"))
         dir = self.write_temp_dir(cal_2)
@@ -77,7 +78,6 @@ class ZoomScheduler:
         event = Event()
         data = json.loads(data)
         zoom_data = json.loads(zoom_details)
-        #TODO: so have 1 event which sends meeting icals to attendees, and 1 for host
         event.add("summary", data["desc"] )
         event.add("dtstart", datetime.strptime(data["start"], '%Y-%m-%d %H:%M:%S'))
         event.add('dtend', datetime.strptime(data["end"], '%Y-%m-%d %H:%M:%S'))
@@ -85,10 +85,9 @@ class ZoomScheduler:
             event.add("description", zoom_data["start_url"])
         else:
             event.add("description", zoom_data["join_url"])
-        #TODO:// add here the url link
         for email in data["send_emails"]:
             event.add("attendee", f"MAILTO:${email}")
-        #https://icalendar.readthedocs.io/en/latest/usage.html
+
 
 
         return event
@@ -161,9 +160,3 @@ class ZoomScheduler:
 
         # terminating the session
         s.quit()
-
-
-
-
-{'desc': '2000-02-03 12:12', 'end': '2000-02-03 12:12:00', 'myEmail': 'hznagri@uwaterloo.ca', 'send_emails': ['qw@wq.ca'], 'start': '2000-02-03 12:12:00'}
-{'uuid': 'wcXGlu9NQ3SjJRmZ9fgSMQ==', 'id': 83785232253, 'host_id': '-xFmmXU3TrKLt1qM8u_F0w', 'topic': 'Zoom Meeting', 'type': 2, 'status': 'waiting', 'start_time': '2020-06-26T01:16:40Z', 'duration': 60, 'timezone': 'America/Los_Angeles', 'created_at': '2020-06-26T01:16:40Z', 'start_url': 'https://us02web.zoom.us/s/83785232253?zak=eyJ6bV9za20iOiJ6bV9vMm0iLCJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJjbGllbnQiLCJ1aWQiOiIteEZtbVhVM1RyS0x0MXFNOHVfRjB3IiwiaXNzIjoid2ViIiwic3R5IjoxMDAsIndjZCI6InVzMDIiLCJjbHQiOjAsInN0ayI6IkxIMHQ5c2hfSTNVekpONHEtVnBhTzJJVDQ0UzNvQmd1MXlmMDdhRjFlS1UuQmdVZ1IwRkJNMUoxZEdsNFZVTnJObkZUT1N0M1NEUXZiREJNVkc1VmJ6VnhObmxBWW1ReU1EWTJPVGd4TWpJMFlXSTVNRGMyTnprM1l6WXdNamMxT1dJM1lqUmtaV00wTWpFeFpURTBZVGsxWXpCaE1qVXdZakpoTVRabVpESXdNalpqTXdBTU0wTkNRWFZ2YVZsVE0zTTlBQVIxY3pBeSIsImV4cCI6MTU5MzE0MTQwMCwiaWF0IjoxNTkzMTM0MjAwLCJhaWQiOiJ2elgwa3BqY1NRbWpVNXVvdDlLeDZBIiwiY2lkIjoiIn0.l-JHF3U0FMLprd67TvJOpo0KpNAcxnWY3T40Inmkm9I', 'join_url': 'https://us02web.zoom.us/j/83785232253?pwd=REQxSUxXQlY1WnB0TlQvZk1YTzhvdz09', 'password': '9Gj26D', 'h323_password': '943391', 'pstn_password': '943391', 'encrypted_password': 'REQxSUxXQlY1WnB0TlQvZk1YTzhvdz09', 'settings': {'host_video': False, 'participant_video': False, 'cn_meeting': False, 'in_meeting': False, 'join_before_host': False, 'mute_upon_entry': False, 'watermark': False, 'use_pmi': False, 'approval_type': 2, 'audio': 'voip', 'auto_recording': 'none', 'enforce_login': False, 'enforce_login_domains': '', 'alternative_hosts': '', 'close_registration': False, 'registrants_confirmation_email': True, 'waiting_room': True, 'registrants_email_notification': True, 'meeting_authentication': False}}
