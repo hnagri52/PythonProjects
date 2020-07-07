@@ -44,15 +44,18 @@ class ZoomScheduler:
         res = requests.post(URL, data=data, headers=headers)
 
         cal = Calendar()
-        cal.add_component(self.make_ical(data, res.content))
+        cal.add_component(self.make_ical(data, res.content, "from"))
         dir = self.write_temp_dir(cal)
         #make the send email fct call
         data = json.loads(data)
-        self.send_mail(dir, self.smtp_email, data["send_emails"], "MEETING INVITE!", data["desc"])
+        unloaded_data = json.dumps(data)
+        self.send_mail(dir, self.smtp_email, data["send_emails"], "MEETING INVITE!", data["desc"], "from")
 
-        #TODO:// create a functoin to send the email, the file is located in dir @ dir/invite.ics -->LINK: https://stackoverflow.com/questions/3362600/how-to-send-email-attachments
+        cal_2 = Calendar()
+        cal_2.add_component(self.make_ical(unloaded_data, res.content, "to"))
+        dir = self.write_temp_dir(cal_2)
+        self.send_mail(dir, self.smtp_email, data["send_emails"], "MEETING INVITE!", data["desc"], "to")
 
-        # print(res.content)
 
 
     def get_details(self):
@@ -70,18 +73,18 @@ class ZoomScheduler:
         else:
             raise ValueError(f'Invalid email provided: {email}')
 
-    def make_ical(self,data, zoom_details):
+    def make_ical(self,data, zoom_details, type):
         event = Event()
         data = json.loads(data)
         zoom_data = json.loads(zoom_details)
         #TODO: so have 1 event which sends meeting icals to attendees, and 1 for host
-
-        #For host
-        # total_desc = data["desc"] + "\n" + "Link to start meeting: " + zoom_data["start_url"]
         event.add("summary", data["desc"] )
         event.add("dtstart", datetime.strptime(data["start"], '%Y-%m-%d %H:%M:%S'))
         event.add('dtend', datetime.strptime(data["end"], '%Y-%m-%d %H:%M:%S'))
-        event.add("description", zoom_data["start_url"])
+        if type=="from":
+            event.add("description", zoom_data["start_url"])
+        else:
+            event.add("description", zoom_data["join_url"])
         #TODO:// add here the url link
         for email in data["send_emails"]:
             event.add("attendee", f"MAILTO:${email}")
@@ -89,8 +92,7 @@ class ZoomScheduler:
 
 
         return event
-        print(data)
-        print(zoom_data)
+
 
     def write_temp_dir(self, cal):
         directory = tempfile.mkdtemp()
@@ -100,7 +102,7 @@ class ZoomScheduler:
         return directory
 
 
-    def send_mail(self, directory,send_from, send_to, subject, text):
+    def send_mail(self, directory,send_from, send_to, subject, text, type):
         assert isinstance(send_to, list)
 
         # instance of MIMEMultipart
@@ -110,12 +112,14 @@ class ZoomScheduler:
         msg['From'] = send_from
 
         # storing the receivers email address
-        msg['To'] = COMMASPACE.join(send_to)
+        if type == "from":
+            msg['To'] = COMMASPACE.join(send_to)
+        else:
+            msg["To"] = self.email
 
         # storing the subject
         msg['Subject'] = subject
 
-        print(text)
         # string to store the body of the mail
         body = text
 
