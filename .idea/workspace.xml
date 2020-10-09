@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c2303ae2-7315-4707-a7fe-f9ab0eb7bc4b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/SYDE 252/292L/lab2/secondCircuit.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SYDE 252/292L/lab2/third.py" beforeDir="false" afterPath="$PROJECT_DIR$/SYDE 252/292L/lab2/third.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -193,7 +192,7 @@
       <workItem from="1601242408252" duration="2240000" />
       <workItem from="1601250715750" duration="398000" />
       <workItem from="1602217380289" duration="1882000" />
-      <workItem from="1602220204591" duration="1028000" />
+      <workItem from="1602220204591" duration="1388000" />
     </task>
     <task id="LOCAL-00001" summary="graph 1">
       <created>1602219494250</created>
