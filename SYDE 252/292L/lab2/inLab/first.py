@@ -22,26 +22,13 @@ vals = [
     -19.81238707
 ]
 
-# vals = [
-#     -20.265 ,
-#     -14.366 ,
-#     -11.038 ,
-#     -8.797 ,
-#     -7.170 ,
-#     -5.939 ,
-#     -4.982 ,
-#     -4.225 ,
-#     -3.619 ,
-#     -3.125  ,
-#     -1.017  ,
-#     -0.281 ,
-#     -0.057
-# ]
 
 # plot, show, and label the graph
 plt.title("Simulated Gain vs Frequency")
 plt.xlabel("Frequency (Hz)")
 plt.ylabel("Gain (dB)")
-plt.semilogx(x, vals)
+plt.semilogx(x, vals, marker = ".",
+             markersize = 8)
+
 # plt.grid(True)
 plt.show()
