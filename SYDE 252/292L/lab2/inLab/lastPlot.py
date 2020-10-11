@@ -15,9 +15,9 @@ vals = [
 
 
 # plot, show, and label the graph
-plt.title("Frequency vs phase shift")
-plt.xlabel("Frequency (Hz)")
-plt.ylabel("Phase")
+plt.title("Frequency vs gain ")
+plt.xlabel("frequnecy")
+plt.ylabel("gain (dB)")
 plt.semilogx(x, vals, marker = ".",
              markersize = 8)
 
