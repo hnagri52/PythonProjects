@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c2303ae2-7315-4707-a7fe-f9ab0eb7bc4b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/School/262/a3/graph_1.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/School/262/a3/graph_3.py" beforeDir="false" afterPath="$PROJECT_DIR$/School/262/a3/graph_3.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -186,7 +187,7 @@
       <workItem from="1602217380289" duration="1882000" />
       <workItem from="1602220204591" duration="6953000" />
       <workItem from="1602402962262" duration="925000" />
-      <workItem from="1602452761826" duration="1110000" />
+      <workItem from="1602452761826" duration="1964000" />
     </task>
     <task id="LOCAL-00001" summary="graph 1">
       <created>1602219494250</created>
